@@ -31,3 +31,20 @@ function deleteTask(button) {
   var li = button.parentElement.parentElement;
   li.remove();
 }
+
+// Funzione per attivare/disattivare la modalità scura
+function toggleDarkMode() {
+  // Verifica se il body ha la classe 'dark-mode'
+  if (document.body.classList.contains('dark-mode')) {
+    // Se la classe è presente, la rimuove (disattiva la modalità scura)
+    document.body.classList.remove('dark-mode');
+  } else {
+    // Altrimenti, aggiunge la classe (attiva la modalità scura)
+    document.body.classList.add('dark-mode');
+  }
+}
+
+// Aggiungi un ascoltatore di eventi per il pulsante di toggle
+document
+  .getElementById('darkModeButton')
+  .addEventListener('click', toggleDarkMode);

@@ -4,13 +4,43 @@
   box-sizing: border-box;
 }
 
+/* Definizione delle variabili per i colori del tema chiaro */
+:root {
+  --background-color-light: #ffffff;
+  --text-color-light: #000000;
+}
+
+/* Definizione delle variabili per i colori del tema scuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color-dark: #000000;
+    --text-color-dark: #ffffff;
+  }
+}
+
+/* Gradient di sfondo per il tema chiaro */
 body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(
+  background-image: linear-gradient(
     90deg,
-    rgba(121, 121, 122, 1) 0%,
-    rgba(218, 230, 232, 1) 100%
-  );
+    rgba(182, 182, 219, 1) 0%,
+    rgba(236, 242, 244, 1) 100%
+  ); /* Cambia i colori qui */
+  color: var(--text-color-light); /* Imposta il colore del testo */
+}
+
+/* Gradient di sfondo per il tema scuro */
+.dark-mode {
+  background-image: linear-gradient(
+    90deg,
+    rgba(205, 180, 217, 1) 0%,
+    rgba(78, 64, 84, 1) 29%,
+    rgba(0, 0, 0, 1) 52%
+  ); /* Cambia i colori qui */
+  color: var(--text-color-dark); /* Imposta il colore del testo */
+}
+
+span {
+  font-size: 20px;
 }
 
 .cont {
@@ -71,4 +101,14 @@ li:last-child {
 
 .task-actions button {
   margin-left: 10px;
+}
+
+.cont-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+button {
+  background-color: #342c2c;
 }
